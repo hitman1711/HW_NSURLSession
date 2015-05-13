@@ -8,7 +8,12 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () {
+    NSURLSession *backSession;
+    id presented;
+}
+
+@property (strong, nonatomic) IBOutlet UITableView *table;
 
 @end
 
@@ -16,12 +21,70 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    _netMgr = [NetManager sharedInstance];
+    
+    if (!_fruits) {
+        [self updateFruits];
+    } else {
+        [_table reloadData];
+    }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)updateFruits{
+    
+    [_netMgr getFruits:^(NSArray *arr, NSError *err) {
+        _fruits = [NSMutableArray arrayWithArray:arr];
+        [_table reloadData];
+    }];
 }
+
+-(void)setupProgressCircle{
+
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _fruits.count;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString* cellIdentifier = @"CellIdentifier";
+    FruitModel *tFruit = [_fruits objectAtIndex:indexPath.row];
+    FruitCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+    cell.nameLabel.text = [tFruit title];
+    if (![tFruit cachedImage]) {
+        [_netMgr getFruitThumb:^(FruitModel *fruit, NSError *err) {
+            [_fruits replaceObjectAtIndex:indexPath.row withObject:[fruit copy]];
+            [cell.fruitImageView setImage:[UIImage imageWithData:[[_fruits objectAtIndex:indexPath.row] cachedImage]]];
+        } of:tFruit];
+    } else {
+        [cell.fruitImageView setImage:[UIImage imageWithData:[tFruit cachedImage]]];
+    }
+    return cell;
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    presented = nil;
+    presented = (FullPicController*)segue.destinationViewController;
+    [_netMgr setDelegate:presented];
+    
+    NSIndexPath *indexPath = [_table indexPathForSelectedRow];
+    if (indexPath){
+        [segue.destinationViewController setIndex:@(indexPath.row)];
+        FruitModel __block *tFruit = [_fruits objectAtIndex:indexPath.row];
+        if (!tFruit.cachedLargeImage) {
+            [segue.destinationViewController setFruit:tFruit];
+            [_netMgr getFruitImgOf:tFruit];
+        } else {
+            tFruit = [_fruits objectAtIndex:indexPath.row];
+            [segue.destinationViewController setFruit:tFruit];
+        }
+    }
+}
+
+
+
 
 @end

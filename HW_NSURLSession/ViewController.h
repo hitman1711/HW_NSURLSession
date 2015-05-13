@@ -7,9 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NetManager.h"
+#import "FruitModel.h"
+#import "FruitCell.h"
+#import "FullPicController.h"
 
-@interface ViewController : UIViewController
+@class NetManager;
 
+
+
+@interface ViewController : UIViewController 
+
+@property NetManager *netMgr;
+@property NSMutableArray *fruits;
 
 @end
 

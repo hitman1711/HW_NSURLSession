@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8EC8CD941B02846B00089101 /* NetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC8CD931B02846B00089101 /* NetManager.m */; };
+		8EC8CD971B02874100089101 /* FruitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC8CD961B02874100089101 /* FruitModel.m */; };
+		8EC8CD9D1B02ED3900089101 /* FruitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC8CD9C1B02ED3900089101 /* FruitCell.m */; };
+		8EC8CDA01B02FBEF00089101 /* FullPicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC8CD9F1B02FBEE00089101 /* FullPicController.m */; };
 		A815CAD31A3CC70C00E57E04 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A815CAD21A3CC70C00E57E04 /* main.m */; };
 		A815CAD61A3CC70C00E57E04 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A815CAD51A3CC70C00E57E04 /* AppDelegate.m */; };
 		A815CAD91A3CC70C00E57E04 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A815CAD81A3CC70C00E57E04 /* ViewController.m */; };
@@ -27,6 +31,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8EC8CD921B02846B00089101 /* NetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetManager.h; sourceTree = "<group>"; };
+		8EC8CD931B02846B00089101 /* NetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetManager.m; sourceTree = "<group>"; };
+		8EC8CD951B02874100089101 /* FruitModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FruitModel.h; sourceTree = "<group>"; };
+		8EC8CD961B02874100089101 /* FruitModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FruitModel.m; sourceTree = "<group>"; };
+		8EC8CD9B1B02ED3900089101 /* FruitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FruitCell.h; sourceTree = "<group>"; };
+		8EC8CD9C1B02ED3900089101 /* FruitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FruitCell.m; sourceTree = "<group>"; };
+		8EC8CD9E1B02FBEE00089101 /* FullPicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullPicController.h; sourceTree = "<group>"; };
+		8EC8CD9F1B02FBEE00089101 /* FullPicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullPicController.m; sourceTree = "<group>"; };
 		A815CACD1A3CC70C00E57E04 /* HW_NSURLSession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW_NSURLSession.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A815CAD11A3CC70C00E57E04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A815CAD21A3CC70C00E57E04 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -83,8 +95,16 @@
 			children = (
 				A815CAD41A3CC70C00E57E04 /* AppDelegate.h */,
 				A815CAD51A3CC70C00E57E04 /* AppDelegate.m */,
+				8EC8CD921B02846B00089101 /* NetManager.h */,
+				8EC8CD931B02846B00089101 /* NetManager.m */,
+				8EC8CD951B02874100089101 /* FruitModel.h */,
+				8EC8CD961B02874100089101 /* FruitModel.m */,
 				A815CAD71A3CC70C00E57E04 /* ViewController.h */,
 				A815CAD81A3CC70C00E57E04 /* ViewController.m */,
+				8EC8CD9E1B02FBEE00089101 /* FullPicController.h */,
+				8EC8CD9F1B02FBEE00089101 /* FullPicController.m */,
+				8EC8CD9B1B02ED3900089101 /* FruitCell.h */,
+				8EC8CD9C1B02ED3900089101 /* FruitCell.m */,
 				A815CADA1A3CC70C00E57E04 /* Main.storyboard */,
 				A815CADD1A3CC70C00E57E04 /* Images.xcassets */,
 				A815CADF1A3CC70C00E57E04 /* LaunchScreen.xib */,
@@ -219,8 +239,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EC8CD9D1B02ED3900089101 /* FruitCell.m in Sources */,
 				A815CAD91A3CC70C00E57E04 /* ViewController.m in Sources */,
+				8EC8CD941B02846B00089101 /* NetManager.m in Sources */,
 				A815CAD61A3CC70C00E57E04 /* AppDelegate.m in Sources */,
+				8EC8CDA01B02FBEF00089101 /* FullPicController.m in Sources */,
+				8EC8CD971B02874100089101 /* FruitModel.m in Sources */,
 				A815CAD31A3CC70C00E57E04 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +436,7 @@
 				A815CAF21A3CC70C00E57E04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A815CAF31A3CC70C00E57E04 /* Build configuration list for PBXNativeTarget "HW_NSURLSessionTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +445,7 @@
 				A815CAF51A3CC70C00E57E04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
